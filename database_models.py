@@ -1,0 +1,15 @@
+from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
+
+class Product(Base):
+    __tablename__ = "test"
+    
+    __allow_unmapped__ = True
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100))
+    description = Column(String(200))
+    price = Column(Float)
+    quantity = Column(Integer)
